@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <meta name="viewport" content="width=device-width">
+        <meta name="author" content="Team090">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="../css/startRating.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <title>GTbay - itemRatings</title>
+    </head>
+    <body>
+        <div style="width:800px; margin:auto;">
+            <div style="width:66%;">
+                <table style="width:100%">
+                    <tr>
+                        <td>Item ID</td>
+                        <td><b>1001</b></td>
+                    </tr>
+                    <tr>
+                        <td>Item Name</td>
+                        <td><b>Garmin GPS 255W</b></td>
+                    </tr>
+                    <tr>
+                        <td>Average Rating</td>
+                        <td><b>3.5 stars</b></td>
+                    </tr>
+                </table>
+            </div>
+            <div class='container'>
+                <div class="info">
+                    <table style="width:100%;">
+                        <tr>
+                            <td>Rated by:</td>
+                            <td><b>gojackets</b></td>
+                        </tr>
+                        <tr>
+                            <td>Date:</td>
+                            <td><b>3/2/2018 12:22PM</b></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="static-stars">
+                    <!-- <div>
+                        <div class="stars-outer" >
+                            <div class="stars-inner"></div>
+                        </div>
+                    </div> -->
+                    
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                </div>
+                <div class="clear"></div>
+                
+                <div class="comment">
+                    <table style="width:100%;">
+                        <tr>
+                            <td>
+                            This product is great for getting around town but the battery life is extremely limited. It's out of juice when I really need it the most.</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class='container'>
+                <div class="info">
+                    <table style="width:100%;">
+                        <tr>
+                            <td>Rated by:</td>
+                            <td><b>gojackets</b></td>
+                        </tr>
+                        <tr>
+                            <td>Date:</td>
+                            <td><b>3/2/2018 12:22PM</b></td>
+                        </tr>
+                        <tr>
+                        </tr>
+                    </table>
+                </div>
+                <div class="static-stars">
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                </div>
+                <div class="clear"></div>
+                
+                <div class="comment">
+                    <table style="width:100%;">
+                        <tr>
+                            <td>
+                            This product is great for getting around town but the battery life is extremely limited. It's out of juice when I really need it the most.</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <form action="itemRatings_submit" method="get" accept-charset="utf-8">
+                
+                <div style="width:66%;">
+                    <table style="width:100%">
+                        <tr>
+                            <td><span>My Rating</span></td>
+                            <td>
+                                <div id="dynamic-stars">
+                                    <span id="1" class="fa fa-star"></span>
+                                    <span id="2" class="fa fa-star"></span>
+                                    <span id="3" class="fa fa-star"></span>
+                                    <span id="4" class="fa fa-star"></span>
+                                    <span id="5" class="fa fa-star"></span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Comments</td>
+                            <td><textarea name=""></textarea></td>
+                        </tr>
+                    </table>
+                </div>
+                <button>Cancel</button>
+                <button type="submit"><b>Rate This Item<b></button>
+            </form>
+        </div>
+        
+    </body>
+    <script src="../js/StarRating.js"></script>
+</html>

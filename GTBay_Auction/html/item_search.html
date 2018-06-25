@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <meta name="viewport" content="width=device-width">
+        <meta name="author" content="Team090">
+        <title>New Item for Auction</title>
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../css/font-awesome.min.css">
+        <style>
+        </style>
+    </head>
+    <body>
+        <header>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        </header>
+
+        <!--Load the category list and condition list from database-->
+        <script src = "../js/load_options.js"></script>
+
+        <h2>Please input search information</h2>
+        <form name="searchForm" action="" method="post">
+            <label for="keyword"><b>Keyword<b></label>
+            <input type="text" name="keyword">
+            <br>
+            <label <b>Category<b></label>
+            <select name="category" id = "category_list">
+            </select>
+            <br>
+            <label for="min_price"><b>Minimum Price $</b></label>
+            <input type="text" name="min_price">
+            <br>
+            <label for="max_price"><b>Maximum Price $</b></label>
+            <input type="text" name="max_price">
+            <br>
+            <label <b>Condition at least<b></label>
+            <select name = "condition" id = "condition_list">
+            </select>
+            <br>
+            <br>
+            <button type="submit" id="searchItem"><b>Search<b></button>
+        </form>
+
+        <!--Submit the search form to back-end-->
+        <script src = "../js/searchItem.js"></script>
+
+        <!--If cancel button clicked, go back to the main menu according to User Position-->
+        <script>
+            function backToMenu(){
+                var position = sessionStorage.getItem("currentUserPosition");
+                console.log(position);
+
+                if (position == "regular") {
+                    window.open('http://localhost:8888/Phase3/html/main_menu.html', "_self");
+                }
+                else {
+                    window.open('http://localhost:8888/Phase3/html/main_menu_admin.html', "_self");
+                }
+            }
+        </script>
+        <button type="button" onclick="backToMenu()"><b>Cancel<b></button>
+
+
+    </body>
+</html>

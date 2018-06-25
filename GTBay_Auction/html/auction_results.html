@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Auction Report</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        #cancel {
+            position: relative;
+            left: 70px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>Auction Results</h2>
+    <table id='report-table' class="table">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Item Name</th>
+            <th>Sale Price</th>
+            <th>Winner</th>
+            <th>Auction Ended</th>
+        </tr>
+        </thead>
+        <tbody class='template-row hidden'>
+        <tr>
+            <td class='id'></td>
+            <td class="item_name"></td>
+            <td class="sale_price"></td>
+            <td class="winner"></td>
+            <td class="auction_ended"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<!--If cancel button clicked, go back to the main menu according to User Position-->
+<script>
+    function backToMenu(){
+        var position = sessionStorage.getItem("currentUserPosition");
+        console.log(position);
+
+        if (position == "regular") {
+            window.open('http://localhost:8888/Phase3/html/main_menu.html', "_self");
+        }
+        else {
+            window.open('http://localhost:8888/Phase3/html/main_menu_admin.html', "_self");
+        }
+    }
+</script>
+    <button id="cancel" type="button" onclick="backToMenu()"><b>Cancel<b></button>
+</body>
+<script src="../js/auction_report.js"></script>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset = "utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="author" content="Team090">
+    <title>New Item for Auction</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/font-awesome.min.css">
+    <style>
+        #searchResults{
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</header>
+
+
+<h2>Search Results</h2>
+
+<table id = "searchResults"></table>
+
+<script src = "../js/itemSearchResult.js"></script>
+
+<!--If cancel button clicked, go back to the main menu according to User Position-->
+<script>
+    function backToSearch(){
+        window.open('http://localhost:8888/Phase3/html/item_Search.html', "_self");
+    }
+</script>
+<br>
+<button type="button" onclick="backToSearch()"><b>Back to Search<b></button>
+
+</body>
+</html>
