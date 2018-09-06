@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Category Report</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <style>
+            #cancel {
+                position: relative;
+                left: 70px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h2>Category Report</h2>
+            <table id='report-table' class="table">
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Total Items</th>
+                        <th>Min Price</th>
+                        <th>Max Price</th>
+                        <th>Average Price</th>
+                    </tr>
+                </thead>
+                <tbody class='template-row hidden'>
+                    <tr>
+                        <td class='cat'>John</td>
+                        <td class="tot">Doe</td>
+                        <td class="min">john@example.com</td>
+                        <td class="max">john@example.com</td>
+                        <td class="avg">john@example.com</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <button id="cancel" type="button" onclick="backToMenu()"><b>Cancel<b></button>
+    </body>
+    <script src="../js/category-report.js"></script>
+    <script>
+        function backToMenu(){
+            var position = sessionStorage.getItem("currentUserPosition");
+            console.log(position);
+
+            if (position == "regular") {
+                window.open('http://localhost:8888/Phase3/html/main_menu.html', "_self");
+            }
+            else {
+                window.open('http://localhost:8888/Phase3/html/main_menu_admin.html', "_self");
+            }
+        }
+    </script>
+
+</html>

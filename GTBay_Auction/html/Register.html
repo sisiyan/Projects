@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset = "utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="author" content="Team090">
+    <title>GTbay-Register</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/font-awesome.min.css">
+  </head>
+  <body>
+    <header>
+        <script type = "text/javascript"
+                src = "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+        </script>
+    </header>
+    <div class="imgcontainer">
+      <img src="../img/Logo.png" alt="Logo" style="width:340px;height:238px;" class="Logo">
+    </div>
+    <form id="register" method="post" action="">
+        <label for="fname"><b>First Name<b></label>
+        <input type="text" name="fname">
+        <br>
+        <label for="lname"><b>Last Name</b></label>
+        <input type="text" name="lname">
+        <br>
+        <label for="uname"><b>Username<b></label>
+        <input type="text" name="uname">
+        <br>
+        <label for="psw"><b>Password</b></label>
+        <input type="text" name="psw">
+        <br>
+        <label for="cmpsw"><b>Confirm Password</b></label>
+        <input type="text" name="cmpsw">
+        <br>
+        <button type="submit" id = "registerButton"> <b>Register<b></button>
+        <!--onclick="register()"-->
+    </form>
+    <script src = "../js/register.js"></script>
+    <script>
+        function backToLogin() {
+            window.open('http://localhost:8888/Phase3/html/login.html', "_self");
+        }
+    </script>
+    <button type="button" onclick="backToLogin()"><b>Cancel<b></button>
+    <p id="demo"></p>
+
+  </body>
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset = "utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="author" content="Team090">
+    <title>GTbay - itemDescription</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="../css/startRating.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<style>
+    #view-rating {
+        position: absolute;
+        top: 60px;
+        left: 300px;
+        width: 120px;
+        height: 30px;
+    }
+    #editDescription {
+        position: absolute;
+        top: 170px;
+        left: 5px;
+        width: 150px;
+        height: 30px;
+    }
+
+    #getNowbtn {
+        position: absolute;
+        top: 322px;
+        left: 200px;
+        width: 100px;
+        height: 30px;
+    }
+    #itemTable {
+        border: 0px solid black;
+        border-collapse: collapse;
+    }
+    th, td {
+        padding: 10px;
+        text-align: left;
+    }
+    #bidTable{
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+    th, td {
+        padding: 10px;
+        text-align: left;
+    }
+</style>
+<body>
+<button type="button" id="view-rating" data-toggle="modal" data-target="#itemDescriptionModel"><b>View Ratings</b></button>
+<header>
+    <h3>Item Description</h3>
+</header>
+<div class="viewRating">
+    <div class="modal fade" id="itemDescriptionModel" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Item Ratings</h4>
+                </div>
+                <div class="modal-body">
+                    <div style="width:100%; margin:auto;">
+                        <div style="width:66%;" >
+                            <table style="width:100%">
+                                <tr>
+                                    <td>Item ID</td>
+                                    <td id="item-id"><b>1001</b></td>
+                                </tr>
+                                <tr>
+                                    <td>Item Name</td>
+                                    <td><b id="item-name">Garmin GPS 255W</b></td>
+                                </tr>
+                                <tr>
+                                    <td>Average Rating</td>
+                                    <td><b id='avg-rating'></b></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div id="template-review" class='container hidden'>
+                            <div class="info">
+                                <table style="width:100%;">
+                                    <div>
+                                        <a href="" class="hidden delete-rating">Delete My Rating</a>
+                                    </div>
+                                    <tr>
+                                        <td>Rated by:</td>
+                                        <td class='rated-by'><b></b></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Date:</td>
+                                        <td class='rated-date'><b></b></td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="static-stars">
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                            </div>
+                            <div class="clear"></div>
+
+                            <div class="comment">
+                                <table style="width:100%;">
+                                    <tr>
+                                        <td>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <form id="rating-form" action="itemRatings_submit" method="get" accept-charset="utf-8">
+
+                            <div style="width:66%;">
+                                <table style="width:100%">
+                                    <tr>
+                                        <td><span>My Rating</span></td>
+                                        <td>
+                                            <div id="dynamic-stars">
+                                                <span id="1" class="fa fa-star"></span>
+                                                <span id="2" class="fa fa-star"></span>
+                                                <span id="3" class="fa fa-star"></span>
+                                                <span id="4" class="fa fa-star"></span>
+                                                <span id="5" class="fa fa-star"></span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Comments</td>
+                                        <td><textarea name="" id="comment-content"></textarea></td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <button data-dismiss="modal">Cancel</button>
+                            <button type="submit"><b>Rate This Item<b></button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<h id = "test"></h>
+
+<script src="../js/itemDescription.js"></script>
+
+
+<table id = "itemTable"></table>
+<div id = "editDescription"></div>
+
+<div class="getButton" id = "getNowbtn">
+    <!--<button id="getIt" type="button" onclick="getItNow()">Get It Now!</button>-->
+</div>
+
+<table id = "bidTable"></table>
+
+<br>
+
+
+<div>
+    <label for="bid"><b>Your bid $<b></label>
+    <input name="bid" id = "yourBid"/>
+    <label for="bid" id="minBid"><b><b></label>
+    <br>
+    <br>
+    <button type="submit" onclick="bid()"><b>Bid On This Item</b></button>
+    <button type="submit" onclick="backToSearch()"><b>Cancel</b></button>
+</div>
+
+
+<!--<form action="./item_search.html">-->
+
+<!--</form>-->
+</body>
+<script src="../js/starRating.js"></script>
+</html>

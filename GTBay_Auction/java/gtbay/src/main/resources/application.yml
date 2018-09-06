@@ -1,0 +1,10 @@
+server:
+  port: 12301
+  context-path: /
+
+database:
+  mysql:
+    className: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/cs6400_sp18_team090?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=EST
+    userName: root
+    password: root
